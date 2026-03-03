@@ -1,24 +1,62 @@
-Library Management System
+# Library Management System
 
-Overview
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat&logo=java&logoColor=white)
+![Swing](https://img.shields.io/badge/Swing-GUI-blue?style=flat)
+![JUnit](https://img.shields.io/badge/Tested%20with-JUnit-green?style=flat)
+![OOP](https://img.shields.io/badge/Design-OOP%20%7C%20MVC-purple?style=flat)
 
-The Library Management System is a Java application with a graphical user interface (GUI) that allows users to manage a personal library. Users can add books, search for books, set books as "to-read," rate books, and receive reading suggestions. The project follows object-oriented design principles and includes UML diagrams and documentation. Additionally, the system includes automated testing to ensure functionality.
+A Java desktop application for managing a personal book library. Built with Swing for the GUI, follows object-oriented design principles, and ships with a full JUnit test suite.
 
-Features
+## Features
 
-Add Books: Users can add books to the library with details like title, author, and genre.
+- **Add Books** — store title, author, genre, and metadata
+- **Search** — find books by title, author, or genre
+- **To-Read List** — mark books for future reading
+- **Ratings** — rate books after reading
+- **Smart Suggestions** — get reading recommendations based on your preferences
+- **Persistent Storage** — library state saved to `books.txt`
+- **Automated Tests** — JUnit tests covering core library logic
 
-Search Books: Search for books by title, author, or genre.
+## Project Structure
 
-Set To-Read: Mark books as "to-read" for future reference.
+```
+Library-Management/
+├── Book.java              # Book model (title, author, genre, rating)
+├── Library.java           # Core library logic and data store
+├── LibraryGUI.java        # Swing GUI — main window and controls
+├── MyLibrary.java         # Application entry point
+├── BookTest.java          # JUnit tests for Book
+├── LibraryTest.java       # JUnit tests for Library
+└── books.txt              # Persistent book data
+```
 
-Rate Books: Assign ratings to books after reading them.
+## Getting Started
 
-View Library: List all books with their details.
+**Requirements:** Java 11+, JUnit 4 (for tests)
 
-Suggest Read: Get book recommendations based on user preferences.
+```bash
+# Compile
+javac *.java
 
-Graphical User Interface: A user-friendly GUI for easy interaction.
+# Run
+java MyLibrary
 
-Automated Testing: Unit tests ensure the application functions correctly.
+# Run tests
+java -cp .:junit-4.13.jar org.junit.runner.JUnitCore BookTest LibraryTest
+```
 
+## Design
+
+- **MVC pattern** — `Library.java` is the model, `LibraryGUI.java` is the view/controller
+- **Object-oriented** — `Book` encapsulates all book attributes and behavior
+- **File persistence** — custom serialization to flat file for simplicity
+- **Extensible** — adding new book attributes or search criteria is straightforward
+
+## Tech Stack
+
+| Area | Technology |
+|------|-----------|
+| Language | Java 11 |
+| GUI | Java Swing |
+| Testing | JUnit 4 |
+| Build | javac / manual |
