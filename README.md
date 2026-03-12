@@ -60,3 +60,5 @@ java -cp .:junit-4.13.jar org.junit.runner.JUnitCore BookTest LibraryTest
 | GUI | Java Swing |
 | Testing | JUnit 4 |
 | Build | javac / manual |
+
+<!-- Last reviewed: March 2026 -->
